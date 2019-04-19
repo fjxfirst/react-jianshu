@@ -1,17 +1,19 @@
 import * as actionTypes from './action-types'
-const defaultSate = {
-  focused: false
-}
+import {fromJS} from 'immutable'
+const defaultSate = fromJS({
+  focused: false,
+  list:[],
+  page:1,
+  totalPage:1
+})
 export default (state = defaultSate, action) => {
   switch (action.type) {
     case actionTypes.SEARCH_FOCUS:
-      return {
-        focused: true
-      }
+      return state.set('focused',true)
     case actionTypes.SEARCH_BLUR:
-      return {
-        focused: false
-      }
+      return state.set('focused',false)
+    case actionTypes.CHANGE_LIST:
+      return state.set('list',action.data)
     default:return state
   }
 

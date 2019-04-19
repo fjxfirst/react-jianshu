@@ -1,14 +1,46 @@
 import React, {Component} from 'react'
 import {CSSTransition} from 'react-transition-group'
-import {HeaderWrapper, Logo, Nav, NavItem, NavSearch, Addition, Button, SearchWrapper} from './style'
+import {
+  HeaderWrapper,
+  Logo,
+  Nav,
+  NavItem,
+  NavSearch,
+  Addition,
+  Button,
+  SearchWrapper,
+  SearchInfo,
+  SearchInfoTitle,
+  SearchInfoSwitch,
+  SearchInfoItem,
+  SearchInfoList
+} from './style'
 import {connect} from 'react-redux'
 import {actions} from './store'
 
 
-
 class Header extends Component {
+
+  getListArea = () => {
+    if (this.props.focused) {
+      return (
+        <SearchInfo>
+          <SearchInfoTitle>热门搜索
+            <SearchInfoSwitch>换一批</SearchInfoSwitch>
+          </SearchInfoTitle>
+          <SearchInfoList>
+            {
+              this.props.list.map(item=> <SearchInfoItem key={item}>{item}</SearchInfoItem>)
+            }
+          </SearchInfoList>
+        </SearchInfo>)
+    } else {
+      return null
+    }
+  }
+
   render() {
-    const {focused,handleInputFocus,handleInputBlur} = this.props
+    const {focused, handleInputFocus, handleInputBlur} = this.props
     return (
       <HeaderWrapper>
         <Logo/>
@@ -25,6 +57,7 @@ class Header extends Component {
               ></NavSearch>
             </CSSTransition>
             <i className={focused ? 'focused iconfont' : 'iconfont'}>&#xe637;</i>
+            {this.getListArea()}
           </SearchWrapper>
         </Nav>
         <Addition>
@@ -38,17 +71,20 @@ class Header extends Component {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    handleInputFocus(){
+    handleInputFocus() {
+      dispatch(actions.getList())
       dispatch(actions.searchFocus())
     },
-    handleInputBlur(){
+    handleInputBlur() {
       dispatch(actions.searchBlur())
     }
   }
 }
 export default connect(
   (state) => ({
-    focused: state.header.focused
+    // focused: state.get('header').get('focused')
+    focused: state.getIn(['header', 'focused']),
+    list: state.getIn(['header','list'])
   }),
   mapDispatchToProps
 )(Header)
