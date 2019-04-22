@@ -22,16 +22,26 @@ import {actions} from './store'
 class Header extends Component {
 
   getListArea = () => {
-    if (this.props.focused) {
+    const {page, totalPage, focused, list, mouseIn, handleMouseEnter, handleMouseLeave, handleChangePage} = this.props
+    let newList = list.toJS()
+    let itemLIst = []
+    if (newList.length) {
+      for (let i = page * 10; i < (page + 1) * 10; i++) {
+        if (newList[i]) {
+          itemLIst.push(<SearchInfoItem key={newList[i]}>{newList[i]}</SearchInfoItem>)
+        }
+      }
+    }
+    if (focused || mouseIn) {
       return (
-        <SearchInfo>
+        <SearchInfo onMouseEnter={handleMouseEnter}
+                    onMouseLeave={handleMouseLeave}
+        >
           <SearchInfoTitle>热门搜索
-            <SearchInfoSwitch>换一批</SearchInfoSwitch>
+            <SearchInfoSwitch onClick={() => {handleChangePage(page, totalPage)}}>换一批</SearchInfoSwitch>
           </SearchInfoTitle>
           <SearchInfoList>
-            {
-              this.props.list.map(item=> <SearchInfoItem key={item}>{item}</SearchInfoItem>)
-            }
+            {itemLIst}
           </SearchInfoList>
         </SearchInfo>)
     } else {
@@ -77,6 +87,19 @@ const mapDispatchToProps = (dispatch) => {
     },
     handleInputBlur() {
       dispatch(actions.searchBlur())
+    },
+    handleMouseEnter() {
+      dispatch(actions.mouseEnter())
+    },
+    handleMouseLeave() {
+      dispatch(actions.mouseLeave())
+    },
+    handleChangePage(page, totalPage) {
+      if (page + 1 < totalPage) {
+        dispatch(actions.changePage(page + 1))
+      } else {
+        dispatch(actions.changePage(0))
+      }
     }
   }
 }
@@ -84,7 +107,10 @@ export default connect(
   (state) => ({
     // focused: state.get('header').get('focused')
     focused: state.getIn(['header', 'focused']),
-    list: state.getIn(['header','list'])
+    list: state.getIn(['header', 'list']),
+    page: state.getIn(['header', 'page']),
+    totalPage: state.getIn(['header', 'totalPage']),
+    mouseIn: state.getIn(['header', 'mouseIn'])
   }),
   mapDispatchToProps
 )(Header)
