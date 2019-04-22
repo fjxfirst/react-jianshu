@@ -3,11 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="2c9c4175-78f4-46c6-85d9-759af4494f7b" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/api/headerList.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/api/headerList.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/common/header/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/header/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/header/store/action-types.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/header/store/action-types.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/header/store/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/header/store/actions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/header/store/reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/header/store/reducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/header/style.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/header/style.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/statics/iconfont/iconfont.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/statics/iconfont/iconfont.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/statics/iconfont/iconfont.eot" beforeDir="false" afterPath="$PROJECT_DIR$/src/statics/iconfont/iconfont.eot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/statics/iconfont/iconfont.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/statics/iconfont/iconfont.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/statics/iconfont/iconfont.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/src/statics/iconfont/iconfont.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/statics/iconfont/iconfont.woff" beforeDir="false" afterPath="$PROJECT_DIR$/src/statics/iconfont/iconfont.woff" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -24,8 +26,8 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/common/header/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="96" column="39" selection-start-line="96" selection-start-column="39" selection-end-line="96" selection-end-column="39" />
+            <state relative-caret-position="160">
+              <caret line="89" column="7" lean-forward="true" selection-start-line="89" selection-start-column="7" selection-end-line="89" selection-end-column="7" />
               <folding>
                 <element signature="e#0#38#0" expanded="true" />
               </folding>
@@ -45,8 +47,8 @@
       <file leaf-file-name="style.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/common/header/style.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-84">
-              <caret line="126" column="15" selection-start-line="126" selection-start-column="15" selection-end-line="126" selection-end-column="15" />
+            <state relative-caret-position="238">
+              <caret line="137" column="29" selection-start-line="137" selection-start-column="29" selection-end-line="137" selection-end-column="29" />
               <folding>
                 <element signature="e#0#38#0" expanded="true" />
               </folding>
@@ -113,18 +115,18 @@
         <option value="$PROJECT_DIR$/src/index.css" />
         <option value="$PROJECT_DIR$/src/statics/iconfont/iconfont.js" />
         <option value="$PROJECT_DIR$/src/index.js" />
-        <option value="$PROJECT_DIR$/src/statics/iconfont/iconfont.css" />
         <option value="$PROJECT_DIR$/src/store/action-types.js" />
         <option value="$PROJECT_DIR$/src/App.js" />
         <option value="$PROJECT_DIR$/src/store/actions.js" />
         <option value="$PROJECT_DIR$/src/common/header/store/index.js" />
-        <option value="$PROJECT_DIR$/src/common/header/style.js" />
         <option value="$PROJECT_DIR$/src/store/reducer.js" />
         <option value="$PROJECT_DIR$/src/store/index.js" />
         <option value="$PROJECT_DIR$/src/common/header/store/action-types.js" />
         <option value="$PROJECT_DIR$/src/common/header/store/actions.js" />
         <option value="$PROJECT_DIR$/public/api/headerList.json" />
         <option value="$PROJECT_DIR$/src/common/header/store/reducer.js" />
+        <option value="$PROJECT_DIR$/src/statics/iconfont/iconfont.css" />
+        <option value="$PROJECT_DIR$/src/common/header/style.js" />
         <option value="$PROJECT_DIR$/src/common/header/index.js" />
       </list>
     </option>
@@ -205,6 +207,12 @@
               <item name="jianshu" type="b2602c69:ProjectViewProjectNode" />
               <item name="jianshu" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="statics" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jianshu" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jianshu" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="store" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -268,12 +276,12 @@
       <option name="presentableId" value="Default" />
       <updated>1555569912353</updated>
       <workItem from="1555569913675" duration="25193000" />
-      <workItem from="1555896859931" duration="8794000" />
+      <workItem from="1555896859931" duration="12600000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33987000" />
+    <option name="totallyTimeSpent" value="37793000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -287,7 +295,7 @@
       <window_info anchor="bottom" id="Run" order="2" weight="0.32961783" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49925596" weight="0.32242227" />
+      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49925596" visible="true" weight="0.32242227" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -412,13 +420,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/statics/iconfont/iconfont.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="21" column="26" lean-forward="true" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -444,16 +445,6 @@
           <caret line="2" selection-start-line="2" selection-end-line="2" />
           <folding>
             <element signature="e#0#34#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/common/header/style.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-84">
-          <caret line="126" column="15" selection-start-line="126" selection-start-column="15" selection-end-line="126" selection-end-column="15" />
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -499,6 +490,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/statics/iconfont/iconfont.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="18" column="19" lean-forward="true" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
+          <folding>
+            <element signature="e#185#1647#1" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/common/header/store/reducer.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -509,10 +510,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/common/header/style.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="137" column="29" selection-start-line="137" selection-start-column="29" selection-end-line="137" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/common/header/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="96" column="39" selection-start-line="96" selection-start-column="39" selection-end-line="96" selection-end-column="39" />
+        <state relative-caret-position="160">
+          <caret line="89" column="7" lean-forward="true" selection-start-line="89" selection-start-column="7" selection-end-line="89" selection-end-column="7" />
           <folding>
             <element signature="e#0#38#0" expanded="true" />
           </folding>

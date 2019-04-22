@@ -38,7 +38,10 @@ class Header extends Component {
                     onMouseLeave={handleMouseLeave}
         >
           <SearchInfoTitle>热门搜索
-            <SearchInfoSwitch onClick={() => {handleChangePage(page, totalPage)}}>换一批</SearchInfoSwitch>
+            <SearchInfoSwitch onClick={() => {handleChangePage(page, totalPage, this.spinIcon)}}>
+              <i className="iconfont spin" ref={(icon) => {this.spinIcon = icon}}>&#xe851;</i>
+              换一批
+            </SearchInfoSwitch>
           </SearchInfoTitle>
           <SearchInfoList>
             {itemLIst}
@@ -50,7 +53,7 @@ class Header extends Component {
   }
 
   render() {
-    const {focused, handleInputFocus, handleInputBlur} = this.props
+    const {focused, handleInputFocus, handleInputBlur, list} = this.props
     return (
       <HeaderWrapper>
         <Logo/>
@@ -58,15 +61,15 @@ class Header extends Component {
           <NavItem className='left active'>首页</NavItem>
           <NavItem className='left'>下载App</NavItem>
           <NavItem className='right'>登录</NavItem>
-          <NavItem className='right'><i className="iconfont">&#xe636;</i></NavItem>
+          <NavItem className='right'><i className="iconfont zoom">&#xe636;</i></NavItem>
           <SearchWrapper>
             <CSSTransition timeout={200} in={focused} classNames="slide">
               <NavSearch className={focused ? 'focused' : ''}
-                         onFocus={handleInputFocus}
+                         onFocus={() => {handleInputFocus(list)}}
                          onBlur={handleInputBlur}
               ></NavSearch>
             </CSSTransition>
-            <i className={focused ? 'focused iconfont' : 'iconfont'}>&#xe637;</i>
+            <i className={focused ? 'focused iconfont zoom' : 'iconfont zoom'}>&#xe637;</i>
             {this.getListArea()}
           </SearchWrapper>
         </Nav>
@@ -81,8 +84,10 @@ class Header extends Component {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    handleInputFocus() {
-      dispatch(actions.getList())
+    handleInputFocus(list) {
+      if(list.size===0){
+        dispatch(actions.getList())
+      }
       dispatch(actions.searchFocus())
     },
     handleInputBlur() {
@@ -94,7 +99,14 @@ const mapDispatchToProps = (dispatch) => {
     handleMouseLeave() {
       dispatch(actions.mouseLeave())
     },
-    handleChangePage(page, totalPage) {
+    handleChangePage(page, totalPage, spin) {
+      let originAngle = spin.style.transform.replace(/[^0-9]/ig, '')
+      if (originAngle) {
+        originAngle = parseInt(originAngle, 10)
+      } else {
+        originAngle = 0
+      }
+      spin.style.transform = 'rotate(' + (originAngle + 360) + 'deg)'
       if (page + 1 < totalPage) {
         dispatch(actions.changePage(page + 1))
       } else {
