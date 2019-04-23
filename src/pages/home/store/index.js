@@ -1,2 +1,3 @@
 import homeReducer from './reducer'
-export {homeReducer}
+import * as actions from './actions'
+export {homeReducer,actions}

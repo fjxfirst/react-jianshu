@@ -2,19 +2,24 @@ import * as actionTypes from './action-types'
 import {fromJS} from 'immutable'
 
 const defaultSate = fromJS({
-  topicList: [{
-    id: 1,
-    title: '社会热点',
-    imgUrl: '//upload-images.jianshu.io/upload_images/4872563-1dd99d19914d639a?imageMogr2/auto-orient/strip|imageView2/1/w/360/h/240'
-  },
-    {
-      id: 2,
-      title: '手绘',
-      imgUrl: '//upload-images.jianshu.io/upload_images/4872563-1dd99d19914d639a?imageMogr2/auto-orient/strip|imageView2/1/w/360/h/240'
-    }]
+  topicList: [],
+  articleList:[],
+  recommendList:[],
+  articlePage:1
 })
 export default (state = defaultSate, action) => {
   switch (action.type) {
+    case actionTypes.HOME_CHANGE_DATA:
+      return state.merge({
+        topicList: fromJS(action.topicList),
+        articleList:fromJS(action.articleList),
+        recommendList:fromJS(action.recommendList)
+      })
+    case actionTypes.ADD_HOME_LIST:
+      return state.merge({
+        articleList:state.get('articleList').concat(action.list),
+        articlePage:action.nextPage
+      })
     default:
       return state
   }
