@@ -30,3 +30,4 @@ export const getMoreList = (page) => (
       })
   }
 )
+export const goScrollTop = (isShow) => ({type: actionTypes.GO_SCROLL_TOP,isShow})

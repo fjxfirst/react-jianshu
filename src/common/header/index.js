@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React, {PureComponent} from 'react'
 import {CSSTransition} from 'react-transition-group'
 import {
   HeaderWrapper,
@@ -19,7 +19,7 @@ import {connect} from 'react-redux'
 import {actions} from './store'
 
 
-class Header extends Component {
+class Header extends PureComponent {
 
   getListArea = () => {
     const {page, totalPage, focused, list, mouseIn, handleMouseEnter, handleMouseLeave, handleChangePage} = this.props

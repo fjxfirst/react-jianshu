@@ -5,7 +5,8 @@ const defaultSate = fromJS({
   topicList: [],
   articleList:[],
   recommendList:[],
-  articlePage:1
+  articlePage:1,
+  isShowTopButton:false
 })
 export default (state = defaultSate, action) => {
   switch (action.type) {
@@ -20,6 +21,8 @@ export default (state = defaultSate, action) => {
         articleList:state.get('articleList').concat(action.list),
         articlePage:action.nextPage
       })
+    case actionTypes.GO_SCROLL_TOP:
+      return state.set('isShowTopButton',action.isShow)
     default:
       return state
   }

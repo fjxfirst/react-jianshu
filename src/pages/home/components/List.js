@@ -1,8 +1,8 @@
-import React, {Component} from 'react'
+import React, {PureComponent} from 'react'
 import {ListItem, ListInfo,LoadMore} from '../style'
 import {connect} from 'react-redux'
 import {actions} from '../store'
-class List extends Component {
+class List extends PureComponent {
   render() {
     const {list,getMoreList,page} = this.props
     return (
