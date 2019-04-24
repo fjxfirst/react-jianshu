@@ -8,6 +8,7 @@ import {connect} from 'react-redux'
 import {actions} from './store'
 //PureComponent底层已经自己实现的shouldComponentUpdate,
 //只有涉及到自己的数据变化的时候才会重新render，所以提高了性能
+//使用PureComponent的前提最好是使用了immutable.js
 class Home extends PureComponent {
   componentDidMount() {
     this.props.getHomeInof()
