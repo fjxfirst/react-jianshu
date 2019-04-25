@@ -26,6 +26,7 @@ line-height:56px;
 padding:0 15px;
 font-size:17px;
 color:#333;
+cursor:pointer;
 &.left{
   float:left;
 }
@@ -72,6 +73,7 @@ color:#777;
 }
 `
 export const SearchWrapper = styled.div`
+z-index:1;
 float:left;
 position:relative;
 .zoom{

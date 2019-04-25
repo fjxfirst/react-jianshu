@@ -1,4 +1,5 @@
 import React, {PureComponent} from 'react'
+import {Redirect} from 'react-router-dom'
 import {HomeWrapper, HomeLeft, HomeRight, BackTop} from './style'
 import Topic from './components/Topic'
 import Recommend from './components/Recommend'
@@ -27,27 +28,33 @@ class Home extends PureComponent {
   }
 
   render() {
-    const {goTop,isShowTopButton} = this.props
-    return <HomeWrapper>
-      <HomeLeft>
-        <img
-          src="//upload.jianshu.io/admin_banners/web_images/4645/2082eac837471d244b9d319da17bdf5580db9ff0.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/1250/h/540"
-          className="banner-img" alt=""/>
-        <Topic/>
-        <List/>
-      </HomeLeft>
-      <HomeRight>
-        <Recommend/>
-        <Writer/>
-      </HomeRight>
-      <BackTop onClick={goTop} isShowTopButton={isShowTopButton}>回到顶部</BackTop>
-    </HomeWrapper>
+    const {goTop,isShowTopButton,login} = this.props
+    if(login){
+      return <HomeWrapper>
+        <HomeLeft>
+          <img
+            src="//upload.jianshu.io/admin_banners/web_images/4645/2082eac837471d244b9d319da17bdf5580db9ff0.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/1250/h/540"
+            className="banner-img" alt=""/>
+          <Topic/>
+          <List/>
+        </HomeLeft>
+        <HomeRight>
+          <Recommend/>
+          <Writer/>
+        </HomeRight>
+        <BackTop onClick={goTop} isShowTopButton={isShowTopButton}>回到顶部</BackTop>
+      </HomeWrapper>
+    } else{
+      return <Redirect to={'/login'}/>
+    }
+
   }
 }
 
 export default connect(
   state => ({
-    isShowTopButton: state.getIn(['home','isShowTopButton'])
+    isShowTopButton: state.getIn(['home','isShowTopButton']),
+    login: state.getIn(['login','login'])
   }),
   dispatch => ({
     getHomeInof() {

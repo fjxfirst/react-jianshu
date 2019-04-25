@@ -4,7 +4,7 @@ import {connect} from 'react-redux'
 import {actions} from './store'
 class Detail extends PureComponent {
   componentDidMount(){
-    this.props.getDetail()
+    this.props.getDetail(this.props.match.params.id)
   }
   render() {
     const {title,content} = this.props
@@ -27,8 +27,8 @@ export default connect(
       content: state.getIn(['detail','content'])
     }),
   dispatch=>({
-    getDetail(){
-      dispatch(actions.getDetail())
+    getDetail(id){
+      dispatch(actions.getDetail(id))
     }
   })
 )(Detail)
